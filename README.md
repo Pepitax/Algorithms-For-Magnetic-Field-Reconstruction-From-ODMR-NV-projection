@@ -49,10 +49,11 @@ the notebook kernels; no machine-specific kernel registration is required.
 The full oracle parameter search evaluates 630 configurations for each of 56
 synthetic measurements. Allow several minutes for fitting, plotting and searches.
 
-All generated files are written under `outputs/`, which is ignored by Git.
-The notebooks at the repository root remain free of saved outputs. Executed
-copies, including inline figures and tables, are written to
-`outputs/executed_notebooks/`. The final report is `outputs/verification.json`.
+The supplied notebooks retain saved outputs so figures and results can be
+inspected without rerunning the analyses. Batch execution writes fresh results
+under `outputs/`, which is ignored by Git, and executed notebook copies under
+`outputs/executed_notebooks/`. It does not overwrite the supplied notebooks.
+The final report is `outputs/verification.json`.
 
 Additional commands:
 
@@ -63,9 +64,11 @@ python tools/reproduce.py --check-inputs
 python tools/reproduce.py --verify-only
 ```
 
-`--verify-only` expects that all five notebooks have already been run. The hash
-check verifies the supplied snapshot; after intentionally editing an input or
-notebook, the original manifest will correctly report a difference.
+`--check-inputs` checks that the five notebooks exist and have valid notebook
+formats, without executing any cells. Saved outputs are accepted; file hashes
+are not checked. `--verify-only` compares previously generated results against
+the numerical references and expects that all five notebooks have already been
+run through the batch command.
 
 ## Notebooks
 
@@ -132,8 +135,7 @@ compares numerical arrays rather than PDF hashes.
 
 [REPRODUCTION.md](REPRODUCTION.md) maps every manuscript figure and numerical
 table to its notebook and exported filename. [VALIDATION.md](VALIDATION.md)
-records the tests performed when preparing this package. `manifest.json` stores
-relative paths, sizes and SHA-256 hashes of the supplied files.
+records the tests performed when preparing this package.
 
 ## Interpretation
 
@@ -155,7 +157,7 @@ refinement is optional and does not guarantee better accuracy.
 ## Moving this package
 
 Copy the notebooks, modules, documentation, `tools/`, `Datas2/`,
-`saved_seed_masks/`, reference directories, requirements, manifest and
+`saved_seed_masks/`, reference directories, requirements and
 `.gitignore` to the destination repository. Keep these relative paths. Generated
 `outputs/`, environments and caches are unnecessary. Preserve the destination's
 own `.git` directory rather than copying this staging repository's Git metadata.
