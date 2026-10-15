@@ -1,0 +1,71 @@
+{
+  "seed_pixels": 489,
+  "projection": [
+    {
+      "method": "graph cut",
+      "RMS": 0.17144314204357444,
+      "max_error": 6.147031176465827
+    },
+    {
+      "method": "refined",
+      "RMS": 0.22792347849931743,
+      "max_error": 5.921390180715029
+    }
+  ],
+  "sign_accuracy_gc": 98.18181818181819,
+  "sign_accuracy_gc_outside_05": 99.52426260704091,
+  "global_alignment_gc": 1,
+  "global_alignment_ref": 1,
+  "field": [
+    {
+      "quantity": "B_parallel",
+      "full RMS [mT]": 0.22792347849931743,
+      "AC RMS [mT]": 0.2279168126533664,
+      "max |GT| [mT]": 23.31650158939652,
+      "max |error| [mT]": 5.921390180715029,
+      "max error / max GT": 0.2539570594676115,
+      "max |AC GT| [mT]": 23.07116975542053,
+      "max |AC error| [mT]": 5.9231333276276805
+    },
+    {
+      "quantity": "Bx",
+      "full RMS [mT]": 0.24432064792769403,
+      "AC RMS [mT]": 0.24432039837253652,
+      "max |GT| [mT]": 27.21877164411931,
+      "max |error| [mT]": 2.2307167594513224,
+      "max error / max GT": 0.08195508557908324,
+      "max |AC GT| [mT]": 27.218422440892997,
+      "max |AC error| [mT]": 2.2303675562250085
+    },
+    {
+      "quantity": "By",
+      "full RMS [mT]": 0.18575129075993096,
+      "AC RMS [mT]": 0.18575096251725634,
+      "max |GT| [mT]": 24.737151494868684,
+      "max |error| [mT]": 2.2321662373761226,
+      "max error / max GT": 0.09023537887291302,
+      "max |AC GT| [mT]": 24.73680229164237,
+      "max |AC error| [mT]": 2.2318170341498087
+    },
+    {
+      "quantity": "Bz",
+      "full RMS [mT]": 0.5208530482280497,
+      "AC RMS [mT]": 0.3016890054637427,
+      "max |GT| [mT]": 20.973920065204442,
+      "max |error| [mT]": 4.294451435281685,
+      "max error / max GT": 0.20475196920418057,
+      "max |AC GT| [mT]": 21.39850414619518,
+      "max |AC error| [mT]": 3.869867354290948
+    },
+    {
+      "quantity": "B_vector",
+      "full RMS [mT]": 0.6045527428365862,
+      "AC RMS [mT]": 0.43036279248409043,
+      "max |GT| [mT]": 27.898023203540944,
+      "max |error| [mT]": 4.341772461939582,
+      "max error / max GT": 0.15563011150512288,
+      "max |AC GT| [mT]": 28.05057367731371,
+      "max |AC error| [mT]": 3.9222351976712515
+    }
+  ]
+}

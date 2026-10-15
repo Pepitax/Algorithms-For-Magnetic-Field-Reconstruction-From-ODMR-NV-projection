@@ -1,0 +1,3 @@
+-r requirements.txt
+# Optional mouse annotation in an existing Jupyter frontend.
+ipympl==0.9.7

@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS",
+  "public_directory_execution": {
+    "notebooks": {
+      "simulation": 20.08,
+      "measurement": 145.86,
+      "benchmark": 23.89,
+      "all-cases": 103.53,
+      "hamiltonian": 6.3
+    },
+    "numerical_reference_checks": true,
+    "python": "3.11.9",
+    "status": "PASS"
+  },
+  "relocated_execution": {
+    "notebooks": {
+      "simulation": 16.14,
+      "measurement": 127.02,
+      "benchmark": 21.59,
+      "all-cases": 104.59,
+      "hamiltonian": 6.44
+    },
+    "numerical_reference_checks": true,
+    "python": "3.11.9",
+    "status": "PASS"
+  },
+  "additional_checks": {
+    "private_files_unchanged": 21,
+    "scientific_helper_AST_equivalence": 6,
+    "coordinate_mask_matches_saved": true,
+    "annotation_callbacks": true,
+    "notebook_outputs_cleared": true,
+    "portable_source_paths": true,
+    "representative_visual_comparisons": 6
+  },
+  "scope": "Existing Windows scientific environment; real Jupyter mouse frontend and other operating systems not exercised."
+}
