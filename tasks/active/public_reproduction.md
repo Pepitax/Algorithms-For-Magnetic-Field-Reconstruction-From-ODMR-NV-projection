@@ -54,3 +54,6 @@ frontend; headless execution verifies the default saved-mask path.
   equality, annotation callbacks, source hygiene and unchanged private inputs.
 - All acceptance criteria met for the tested environment. Jupyter mouse frontend
   interaction and other operating systems remain outside the executable audit.
+- User requested a manual-seed-only public package: removed the truth-corrected
+  mask, its notebook option and unused automatic truth-based annotation helper.
+  Preserved the exact manual input and user-executed notebook copies under outputs.

@@ -51,7 +51,8 @@ unchanged from the research notebooks.
 - Updated the three older public notebooks and their helpers to the current
   research versions; added the dedicated FeGa notebook and its dependencies.
 - Copied the manual simulation mask used by the manuscript and the saved
-  experimental mask. The separate truth-assisted variant remains optional.
+  experimental mask. No truth-corrected mask or automatic truth-based seed
+  generation is included.
 - Made filesystem paths relative and routed exports to per-notebook directories.
 - Added CSV/NPZ exports and guards so saved seeds support unattended execution.
 - Extracted the Hamiltonian equations from the research hysteresis notebook;

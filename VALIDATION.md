@@ -41,9 +41,11 @@ Analytic cubic roots agreed with numerical diagonalization within 1e-12 GHz.
 the loaded mask. Positive, negative and erase annotation callbacks were exercised,
 and editing an annotator did not mutate the original input mask.
 
-**PASS:** a syntax-tree comparison established unchanged executable scientific
-code in the six copied research helpers, apart from the portable default data
-directory in `helpers.py`. Hashes confirmed that all 21 private source/input files
+**PASS:** a syntax-tree comparison established unchanged scientific functions
+used by the notebooks in the six copied research helpers, apart from the portable
+default data directory in `helpers.py`. An unused automatic truth-based seed
+generator was subsequently removed from the public helper. Hashes confirmed
+that all 21 private source/input files
 used for this assembly remained byte-for-byte unchanged. Scientific acquisition
 metadata were preserved; only `operator` and `serial_number` were omitted from
 the public JSON copies.
@@ -75,3 +77,16 @@ a Jupyter frontend was not tested; its callbacks and guarded control flow were.
 The physical assumptions concerning seeds, single-resonance conversion and the
 experimental NV/image frame are not independently calibrated by these software
 checks.
+
+## Manual-seed-only public version
+
+The truth-corrected simulation mask, its selection option and an unused
+truth-based annotation generator have been removed from the public package.
+The manual 489-pixel mask and all reconstruction parameters are unchanged.
+Ground truth is used for evaluation, including global-sign alignment for scoring,
+not for modifying annotations. Both global-sign factors remain +1.
+User-executed notebook copies were retained under `outputs/user_runs/` before
+clearing outputs from the distributable root notebooks.
+
+After this removal, a fresh-kernel simulation execution passed in 14.86 seconds,
+and all numerical reference checks passed again against the generated outputs.

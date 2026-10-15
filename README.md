@@ -88,12 +88,8 @@ notebook and `nv_hamiltonian_helpers.py`, with the same equations.
 
 - `saved_seed_masks/seed_mask_simulation.npy`: **489 manually annotated pixels**,
   the mask used for the manuscript results. No ground-truth correction is applied
-  to this default input.
-- `saved_seed_masks/seed_mask_simulation_checked.npy`: optional, explicitly
-  truth-assisted diagnostic variant with 12 conflicting annotations removed from
-  the current manual mask. It is **not used for the manuscript**. Selecting
-  `USE_TRUTH_CHECKED_SEEDS=True` changes the results and invalidates comparisons
-  with the manual-mask reference metrics.
+  to this input. The public package contains no truth-corrected seed mask and
+  no option to generate annotations from the ground truth.
 - `saved_seed_masks/seeds_2026-05-25-10-27-11.npz`: experimental mask, with
   **90 annotated pixels** (50 positive, 40 negative), acquisition date and the
   associated fitted unsigned map for compatibility checking.
@@ -150,6 +146,7 @@ are not an experimental hyperparameter calibration.
 
 Simulation global-sign alignment uses truth only to resolve the overall sign
 for scoring; both reported alignment factors are +1 for the supplied manual mask.
+This scoring convention does not select, correct or replace any seed annotation.
 The experimental signs were informed by the higher-bias image, which is not an
 independent ground truth. Single-resonance conversion and the image/NV frame
 relation remain physical assumptions, as stated in the manuscript. Continuous

@@ -27,12 +27,23 @@
   },
   "additional_checks": {
     "private_files_unchanged": 21,
-    "scientific_helper_AST_equivalence": 6,
     "coordinate_mask_matches_saved": true,
     "annotation_callbacks": true,
     "notebook_outputs_cleared": true,
     "portable_source_paths": true,
-    "representative_visual_comparisons": 6
+    "representative_visual_comparisons": 6,
+    "used_scientific_functions_unchanged": true,
+    "manual_seed_only_public_package": true,
+    "manual_seed_sha256": "897dfe01851ebc88c133b08a4f711b7500373eda6894fc1456d23e99eb785f7e"
   },
-  "scope": "Existing Windows scientific environment; real Jupyter mouse frontend and other operating systems not exercised."
+  "scope": "Existing Windows scientific environment; real Jupyter mouse frontend and other operating systems not exercised.",
+  "manual_seed_only_followup": {
+    "status": "PASS",
+    "simulation_fresh_kernel_seconds": 14.86,
+    "all_existing_numerical_reference_checks": "PASS",
+    "manual_annotations_unchanged": true,
+    "corrected_seed_mask_present": false,
+    "truth_seed_generator_present": false,
+    "executed_user_notebooks_preserved_in_ignored_outputs": true
+  }
 }

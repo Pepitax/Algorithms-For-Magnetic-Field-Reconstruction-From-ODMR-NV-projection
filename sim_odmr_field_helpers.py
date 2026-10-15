@@ -147,35 +147,6 @@ def print_simulation_summary(cfg: SimulationConfig, sim: dict[str, Any]) -> None
     print(f"Bpar min/max = {np.nanmin(sim['Bpar_gt_mT']):+.3f} / {np.nanmax(sim['Bpar_gt_mT']):+.3f} mT")
 
 
-def make_sparse_truth_seeds(B_gt_mT: np.ndarray, osu: Any, radius: int = 3,
-                            n_pos: int = 10, n_neg: int = 10,
-                            min_abs_mT: float | None = None,
-                            seed: int = 0) -> np.ndarray:
-    """Create sparse + and - seed disks from ground truth, for simulations only."""
-    rng = np.random.default_rng(seed)
-    seed_mask = osu.make_seed_mask(B_gt_mT)
-    B = np.asarray(B_gt_mT, dtype=float)
-    finite = np.isfinite(B)
-
-    if min_abs_mT is None:
-        min_abs_mT = float(np.nanpercentile(np.abs(B[finite]), 60))
-
-    pos_candidates = np.argwhere((B > +min_abs_mT) & finite)
-    neg_candidates = np.argwhere((B < -min_abs_mT) & finite)
-
-    if len(pos_candidates) > 0 and n_pos > 0:
-        ids = rng.choice(len(pos_candidates), size=min(n_pos, len(pos_candidates)), replace=False)
-        for i, j in pos_candidates[ids]:
-            osu.add_seed_disk(seed_mask, int(i), int(j), sign=+1, radius=radius)
-
-    if len(neg_candidates) > 0 and n_neg > 0:
-        ids = rng.choice(len(neg_candidates), size=min(n_neg, len(neg_candidates)), replace=False)
-        for i, j in neg_candidates[ids]:
-            osu.add_seed_disk(seed_mask, int(i), int(j), sign=-1, radius=radius)
-
-    return seed_mask
-
-
 def align_global_sign(B_rec: np.ndarray, B_gt: np.ndarray) -> tuple[np.ndarray, int]:
     """Correct the remaining global sign ambiguity using ground truth."""
     mask = np.isfinite(B_rec) & np.isfinite(B_gt)
